@@ -8,7 +8,7 @@ using System.Collections;
 
 [ExecuteInEditMode]
 public class SimpleHelvetica : MonoBehaviour {
-	
+
 	[HideInInspector]
 	public string Text = "SIMPLE HELVETICA\n \nby Studio Pepwuper";
 	[HideInInspector]
@@ -17,6 +17,8 @@ public class SimpleHelvetica : MonoBehaviour {
 	public float LineSpacing = 22f;
 	[HideInInspector]
 	public float SpaceWidth = 8f; //how wide should the "space" character be?
+	[HideInInspector]
+	public int emotionId = 0;
 			
 	//box collider variables
 	[HideInInspector]
@@ -216,20 +218,20 @@ public class SimpleHelvetica : MonoBehaviour {
 	public void AddBoxCollider(){
 		//Debug.Log ("AddBoxCollider");
 		
-		foreach (Transform child in transform.Find ("_Alphabets")){
-			child.gameObject.AddComponent<BoxCollider>();
-		}
+		//foreach (Transform child in transform.Find ("_Alphabets")){
+		//	child.gameObject.AddComponent<BoxCollider>();
+		//}
 				
-		foreach (Transform child in transform){
-			if (child.name!="_Alphabets"){
-				child.gameObject.AddComponent<BoxCollider>();
-			}
-		}
+		//foreach (Transform child in transform){
+		//	if (child.name!="_Alphabets"){
+		//		child.gameObject.AddComponent<BoxCollider>();
+		//	}
+		//}
 		
 		BoxColliderAdded = true;
 		
 		//set previously set values
-		SetBoxColliderVariables();
+		//SetBoxColliderVariables();
 
 		//this only works with straight sentences
 		//Transform lastChild = transform.GetChild(transform.childCount - 1);
@@ -248,7 +250,7 @@ public class SimpleHelvetica : MonoBehaviour {
 		//	(diff.y * 2) + lastChild.GetComponent<BoxCollider>().size.y/2, 
 		//	(diff.z * 2) + lastChild.GetComponent<BoxCollider>().size.z/2);
 
-		//This works????
+		//This works best for most sentences
 		var rend = transform.GetComponent<MeshRenderer>().bounds;
 		foreach (Transform child in transform)
 		{
@@ -259,7 +261,7 @@ public class SimpleHelvetica : MonoBehaviour {
 				rend.Encapsulate(child.gameObject.GetComponent<MeshRenderer>().bounds);
 			}
 		}
-		gameObject.AddComponent<BoxCollider>();
+		if (gameObject.GetComponent<BoxCollider>() == null) { gameObject.AddComponent<BoxCollider>(); }	
 		gameObject.GetComponent<BoxCollider>().center = rend.center - transform.position;
 		gameObject.GetComponent<BoxCollider>().size = rend.size;
 
@@ -267,19 +269,22 @@ public class SimpleHelvetica : MonoBehaviour {
 
 	public void RemoveBoxCollider(){
 		//Debug.Log ("RemoveBoxCollider");
-			
-		foreach (Transform child in transform.Find ("_Alphabets")){
-			DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
-		}
+
+		//foreach (Transform child in transform.Find ("_Alphabets")){
+		//	DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
+		//}
+
+		//foreach (Transform child in transform){
+		//	if (child.name!="_Alphabets"){
+		//		DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
+		//	}
+		//}
+		if (gameObject.GetComponent<BoxCollider>() != null) 
+		{
+			DestroyImmediate(gameObject.GetComponent<BoxCollider>());
+		}	
 		
-		foreach (Transform child in transform){
-			if (child.name!="_Alphabets"){
-				DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
-			}
-		}
-		
-		BoxColliderAdded = false;
-		
+		BoxColliderAdded = false;		
 	}
 	
 	public void AddRigidbody(){
