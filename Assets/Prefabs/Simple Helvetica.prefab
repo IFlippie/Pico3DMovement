@@ -8755,7 +8755,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355066759679546339}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.325, y: 1.383, z: 2.657}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 6355066759679053437}
@@ -8804,6 +8804,7 @@ MonoBehaviour:
   CharacterSpacing: 4
   LineSpacing: 22
   SpaceWidth: 8
+  emotionId: 0
   BoxColliderIsTrigger: 0
   Mass: 1
   Drag: 0

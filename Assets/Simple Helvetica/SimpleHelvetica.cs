@@ -19,7 +19,9 @@ public class SimpleHelvetica : MonoBehaviour {
 	public float SpaceWidth = 8f; //how wide should the "space" character be?
 	[HideInInspector]
 	public int emotionId = 0;
-			
+	[HideInInspector]
+	public Bounds rend;
+
 	//box collider variables
 	[HideInInspector]
 	public bool BoxColliderIsTrigger = false;
@@ -251,7 +253,7 @@ public class SimpleHelvetica : MonoBehaviour {
 		//	(diff.z * 2) + lastChild.GetComponent<BoxCollider>().size.z/2);
 
 		//This works best for most sentences
-		var rend = transform.GetComponent<MeshRenderer>().bounds;
+		rend = transform.GetComponent<MeshRenderer>().bounds;
 		foreach (Transform child in transform)
 		{
 			if (child.name != "_Alphabets")
@@ -264,7 +266,6 @@ public class SimpleHelvetica : MonoBehaviour {
 		if (gameObject.GetComponent<BoxCollider>() == null) { gameObject.AddComponent<BoxCollider>(); }	
 		gameObject.GetComponent<BoxCollider>().center = rend.center - transform.position;
 		gameObject.GetComponent<BoxCollider>().size = rend.size;
-
 	}
 
 	public void RemoveBoxCollider(){
