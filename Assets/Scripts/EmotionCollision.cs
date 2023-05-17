@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EmotionCollision : MonoBehaviour
 {
-    public int objectVariable;
+    public string objectVariable;
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Text"))
@@ -12,7 +12,7 @@ public class EmotionCollision : MonoBehaviour
             var textObject = collision.gameObject.GetComponent<SimpleHelvetica>();
             if (textObject != null)
             {
-                int textVariable = textObject.emotionId;
+                string textVariable = textObject.emotionId;
                 if (textVariable == objectVariable)
                 {
                     Debug.Log("Variables match!");

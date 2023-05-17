@@ -7,6 +7,7 @@ public class SpawnThoughts : MonoBehaviour
     public float circleRadius;
     public int AmountOfPoints;
     public GameObject FloatingText;
+    public GameObject TextParent;
     public Transform player;
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,13 @@ public class SpawnThoughts : MonoBehaviour
             p.y = transform.position.y;
             var vPos = p;
 
-            //var go = Instantiate(FloatingText);
-            //go.transform.position = vPos;
-            //go.transform.LookAt(player);
+            var go = Instantiate(FloatingText);
+            go.transform.position = vPos;
+            go.GetComponent<SimpleHelvetica>().AddBoxCollider();
+            var goParent = Instantiate(TextParent);
+            goParent.transform.position = go.GetComponent<SimpleHelvetica>().rend.center;
+            go.transform.SetParent(goParent.transform);
+            goParent.transform.LookAt(player);
         }
-        var go = Instantiate(FloatingText);
-        go.transform.position = new Vector3(-2,1f,0);
-        go.GetComponent<SimpleHelvetica>().AddBoxCollider();
-        //go.GetComponent<SimpleHelvetica>().rend.center;
-        //print(go.transform.GetComponent<Renderer>().bounds.center);
     }
 }

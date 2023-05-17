@@ -18,7 +18,7 @@ public class SimpleHelvetica : MonoBehaviour {
 	[HideInInspector]
 	public float SpaceWidth = 8f; //how wide should the "space" character be?
 	[HideInInspector]
-	public int emotionId = 0;
+	public string emotionId = null;
 	[HideInInspector]
 	public Bounds rend;
 
