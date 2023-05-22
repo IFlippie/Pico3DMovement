@@ -9,6 +9,8 @@ public class SpawningText : MonoBehaviour
     public GameObject textSpawnPosition;
     public Dictionary<string, string> dict = new Dictionary<string, string>();
     string test;
+    public Transform[] LookingTexts;
+    public Transform Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -119,7 +121,10 @@ public class SpawningText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        foreach (Transform text in LookingTexts)
+        {
+            text.rotation = Quaternion.LookRotation(text.position - Player.position);
+        }
     }
 
     void SpawnText() 
