@@ -26078,7 +26078,7 @@ MonoBehaviour:
   - {fileID: 1450335239}
   - {fileID: 1522279293}
   - {fileID: 1306364460}
-  Player: {fileID: 1114822339}
+  Player: {fileID: 1123729928}
 --- !u!4 &1085411697
 Transform:
   m_ObjectHideFlags: 0
@@ -26990,11 +26990,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3327657640790614076, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
---- !u!4 &1114822339 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 9014170783728641054, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-  m_PrefabInstance: {fileID: 1114822338}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1117678362
 GameObject:
   m_ObjectHideFlags: 0
@@ -27207,6 +27202,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1118918163}
   m_Mesh: {fileID: 4300000, guid: dc3a1db86c73bb14f8ebd6e2953b7e70, type: 3}
+--- !u!4 &1123729928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9014170783809206335, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+  m_PrefabInstance: {fileID: 1114822338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124608814
 GameObject:
   m_ObjectHideFlags: 0
