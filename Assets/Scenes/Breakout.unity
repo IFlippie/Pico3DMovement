@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2455,6 +2455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnableText: {fileID: 6355066759679546339, guid: 4ca17e10d4a40fc44b96fc46aef8437e, type: 3}
   textSpawnPosition: {fileID: 1047022420}
+  LookingTexts: []
+  Player: {fileID: 0}
 --- !u!4 &1085411697
 Transform:
   m_ObjectHideFlags: 0
@@ -5411,15 +5413,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5068455614678092937, guid: ac935d77c9fd37148a36a9216779f337, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5.07
       objectReference: {fileID: 0}
     - target: {fileID: 5068455614678092937, guid: ac935d77c9fd37148a36a9216779f337, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.333
       objectReference: {fileID: 0}
     - target: {fileID: 5068455614678092937, guid: ac935d77c9fd37148a36a9216779f337, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 5068455614678092937, guid: ac935d77c9fd37148a36a9216779f337, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5459,7 +5461,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5068455614678092980, guid: ac935d77c9fd37148a36a9216779f337, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac935d77c9fd37148a36a9216779f337, type: 3}

@@ -8,7 +8,7 @@ public class SpawningText : MonoBehaviour
     public GameObject spawnableText;
     public GameObject textSpawnPosition;
     public Dictionary<string, string> dict = new Dictionary<string, string>();
-    string test;
+    string HelveticaText;
     public Transform[] LookingTexts;
     public Transform Player;
     // Start is called before the first frame update
@@ -114,7 +114,6 @@ public class SpawningText : MonoBehaviour
         dict.Add("Ik ben niet tevreden met mijn gedrag en dat maakt me ongemakkelijk.", "Beschaamd");
         dict.Add("Ik voel me alsof ik de plank volledig misgeslagen heb en dat maakt me verlegen.", "Beschaamd");
         dict.Add("Ik ben niet blij met de manier waarop ik me gedragen heb en dat laat me onzeker voelen.", "Beschaamd");
-        test = dict.ElementAt(Random.Range(0, dict.Count)).Key;
         SpawnText();       
     }
 
@@ -127,20 +126,25 @@ public class SpawningText : MonoBehaviour
         }
     }
 
-    void SpawnText() 
+    public void SpawnText() 
     {
+        var rndThought = dict.ElementAt(Random.Range(0, dict.Count));
+        HelveticaText = rndThought.Key;
         var go = Instantiate(spawnableText);
         Renderer r = go.GetComponent<Renderer>();
         Color newColor = r.material.color;
         newColor.a = 0;
         r.material.color = newColor;
-        go.GetComponent<SimpleHelvetica>().Text = test;
-        go.GetComponent<SimpleHelvetica>().GenerateText();
+        var helvComp = go.GetComponent<SimpleHelvetica>();
+        helvComp.emotionId = rndThought.Value;
+        helvComp.Text = HelveticaText;
+        helvComp.GenerateText();
         go.transform.position = textSpawnPosition.transform.position;
         go.transform.localScale = new Vector3(1f, 1f, 1f);
-        go.GetComponent<SimpleHelvetica>().AddBoxCollider();
-        go.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        helvComp.AddBoxCollider();
+        go.transform.localScale = new Vector3(0.005f, 0.005f, 0.005f);
         newColor.a = 1;
         r.material.color = newColor;
+        dict.Remove(rndThought.Key);
     }
 }

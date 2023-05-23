@@ -1178,7 +1178,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30997760}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -1244,7 +1244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373edd2c9daa5c479a23dc36f7cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVariable: Bedroefd
+  CollisionID: Bedroefd
 --- !u!1001 &35397209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13200,7 +13200,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 500056194}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -13266,7 +13266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373edd2c9daa5c479a23dc36f7cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVariable: Boos
+  CollisionID: Boos
 --- !u!1 &501001369
 GameObject:
   m_ObjectHideFlags: 0
@@ -26053,7 +26053,7 @@ GameObject:
   - component: {fileID: 1085411696}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26070,7 +26070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f619941fe2b3f8c469ee6c5f8e4f6538, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableText: {fileID: 6355066759679546339, guid: 4ca17e10d4a40fc44b96fc46aef8437e, type: 3}
+  spawnableText: {fileID: 6355066759679546339, guid: ec8a3b244b98e4946b7d70df0e74d0d6, type: 3}
   textSpawnPosition: {fileID: 1047022420}
   LookingTexts:
   - {fileID: 860674849}
@@ -29115,7 +29115,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191142882}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -29181,7 +29181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373edd2c9daa5c479a23dc36f7cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVariable: Blij
+  CollisionID: Blij
 --- !u!1 &1192454682
 GameObject:
   m_ObjectHideFlags: 0
@@ -35288,7 +35288,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463159299}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -35354,7 +35354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373edd2c9daa5c479a23dc36f7cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVariable: Bang
+  CollisionID: Bang
 --- !u!1001 &1464961987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44881,7 +44881,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840688591}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -44947,7 +44947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f373edd2c9daa5c479a23dc36f7cb10a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectVariable: Beschaamd
+  CollisionID: Beschaamd
 --- !u!1 &1842436543
 GameObject:
   m_ObjectHideFlags: 0

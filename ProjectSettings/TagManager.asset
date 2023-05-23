@@ -8,6 +8,7 @@ TagManager:
   - Paddle
   - Brick
   - Wall
+  - Spawner
   layers:
   - Default
   - TransparentFX
