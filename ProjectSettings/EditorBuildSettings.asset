@@ -14,12 +14,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Breakout.unity
     guid: c6c2a1ef432343a419605b55a92b8fa0
   - enabled: 0
     path: Assets/Scenes/GoodThoughtsNinja.unity
     guid: 97705476ff9f27144bfca40633b99fdc
+  - enabled: 1
+    path: Assets/Scenes/ThoughtBoxing.unity
+    guid: 6c0831732c0810a499d7b5e7f4629b25
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: d242616f2ae9aff4abd527a6d2df34d6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a5fd07d215f075249ad15558c10ec13f, type: 2}
