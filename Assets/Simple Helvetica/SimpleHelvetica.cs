@@ -267,6 +267,16 @@ public class SimpleHelvetica : MonoBehaviour {
 		if (gameObject.GetComponent<BoxCollider>() == null) { gameObject.AddComponent<BoxCollider>(); }	
 		gameObject.GetComponent<BoxCollider>().center = rend.center - transform.position;
 		gameObject.GetComponent<BoxCollider>().size = rend.size;
+
+		var TextBackground = GameObject.Find("TextBackground");
+		if (TextBackground != null) 
+		{
+			var tempBackground = Instantiate(TextBackground,transform);
+			tempBackground.GetComponent<MeshRenderer>().enabled = true;
+			tempBackground.transform.localScale = rend.size;
+			tempBackground.transform.position = rend.center - transform.position;
+			tempBackground.transform.position = new Vector3(tempBackground.transform.position.x-0.6f, tempBackground.transform.position.y+1.35f, tempBackground.transform.position.z+2f);
+		}		
 	}
 
 	public void RemoveBoxCollider(){
