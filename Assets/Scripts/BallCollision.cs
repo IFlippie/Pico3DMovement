@@ -6,7 +6,7 @@ public class BallCollision : MonoBehaviour
 {
     [HideInInspector]
     public float accelerationFactor = 0.01f;
-    private float currentSpeed = 4f;
+    private float currentSpeed = 3f;
     // Start is called before the first frame update
     void Start()
     {

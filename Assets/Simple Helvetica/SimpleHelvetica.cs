@@ -275,7 +275,7 @@ public class SimpleHelvetica : MonoBehaviour {
 			tempBackground.GetComponent<MeshRenderer>().enabled = true;
 			tempBackground.transform.localScale = rend.size;
 			tempBackground.transform.position = rend.center - transform.position;
-			tempBackground.transform.position = new Vector3(tempBackground.transform.position.x-0.6f, tempBackground.transform.position.y+1.35f, tempBackground.transform.position.z+2f);
+			tempBackground.transform.position = new Vector3(tempBackground.transform.position.x-0.6f, tempBackground.transform.position.y+1.35f, tempBackground.transform.position.z+3f);
 		}		
 	}
 
