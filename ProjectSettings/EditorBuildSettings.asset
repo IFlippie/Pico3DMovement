@@ -17,10 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Breakout.unity
     guid: c6c2a1ef432343a419605b55a92b8fa0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GoodThoughtsNinja.unity
     guid: 97705476ff9f27144bfca40633b99fdc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/ThoughtBoxing.unity
     guid: 6c0831732c0810a499d7b5e7f4629b25
   m_configObjects:

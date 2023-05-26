@@ -9,6 +9,7 @@ TagManager:
   - Brick
   - Wall
   - Spawner
+  - NinjaStick
   layers:
   - Default
   - TransparentFX
