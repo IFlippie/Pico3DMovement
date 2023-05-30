@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2682,7 +2682,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Timeout: 10
   m_XROrigin: {fileID: 1051687132}
---- !u!1 &1085411695
+--- !u!1 &1080349404
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2690,38 +2690,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1085411697}
-  - component: {fileID: 1085411696}
+  - component: {fileID: 1080349406}
+  - component: {fileID: 1080349405}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: Spawner (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1085411696
+--- !u!114 &1080349405
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085411695}
+  m_GameObject: {fileID: 1080349404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f619941fe2b3f8c469ee6c5f8e4f6538, type: 3}
+  m_Script: {fileID: 11500000, guid: 2281200357ac7ea4fb8778185e6f7953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableText: {fileID: 6355066759679546339, guid: 4ca17e10d4a40fc44b96fc46aef8437e, type: 3}
-  textSpawnPosition: {fileID: 1047022420}
---- !u!4 &1085411697
+  circleRadius: 2
+  AmountOfPoints: 7
+  FloatingText: {fileID: 6355066759679546339, guid: 9100e241bcb647e4aa417dd70d0c1e9a, type: 3}
+  spawnableText: {fileID: 6355066759679546339, guid: ec8a3b244b98e4946b7d70df0e74d0d6, type: 3}
+  TextParent: {fileID: 0}
+  player: {fileID: 0}
+--- !u!4 &1080349406
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1085411695}
+  m_GameObject: {fileID: 1080349404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.8, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4301,7 +4305,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}

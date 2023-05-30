@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UnityEngine;
 
 public class SpawnThoughts : MonoBehaviour
@@ -13,56 +14,14 @@ public class SpawnThoughts : MonoBehaviour
     public Dictionary<string, string> dictP = new Dictionary<string, string>();
     public Dictionary<string, string> dictN = new Dictionary<string, string>();
     string HelveticaText;
+    List<GameObject> goList = new List<GameObject>();
+    List<GameObject> wordList = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
         CreatePosDict();
         CreateNegDict();
         ThoughtSpawns();
-    }
-
-    public void ThoughtSpawns() 
-    {
-        float vStep = (2f * Mathf.PI) / AmountOfPoints;
-        for (int o = 0; o < AmountOfPoints; o++)
-        {
-            Vector3 p;
-            float r = circleRadius * Mathf.Cos(o * vStep);
-            //Y does nothing in our example
-            p.x = transform.position.x + (r * Mathf.Cos(0f));
-            //p.x = transform.position.x + (r * Mathf.Sin(0f));
-            //p.y = transform.position.y + (r * Mathf.Cos(0f));
-            p.z = transform.position.z + (circleRadius * Mathf.Sin(o * vStep));
-            p.y = transform.position.y;
-            var vPos = p;
-
-
-            var rndWord = dictN.ElementAt(Random.Range(0, dictN.Count));
-            HelveticaText = rndWord.Key;
-
-            var go = Instantiate(FloatingText);
-            //Renderer rend = go.GetComponent<Renderer>();
-            //Color newColor = rend.material.color;
-            //newColor.a = 0;
-            //rend.material.color = newColor;
-            //var helvComp = go.GetComponent<SimpleHelvetica>();
-            //helvComp.emotionId = rndWord.Value;
-            //helvComp.Text = HelveticaText;
-            //helvComp.GenerateText();
-            go.transform.position = vPos;
-            go.GetComponent<SimpleHelvetica>().AddBoxCollider();
-            //go.transform.localScale = new Vector3(1f, 1f, 1f);
-            //helvComp.AddBoxCollider();
-            //go.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-            //newColor.a = 1;
-            //rend.material.color = newColor;
-            dictN.Remove(rndWord.Key);
-            var goParent = Instantiate(TextParent);
-            goParent.transform.position = go.GetComponent<SimpleHelvetica>().rend.center;
-            go.transform.SetParent(goParent.transform);
-            goParent.transform.LookAt(player);
-            goParent.transform.rotation = new Quaternion(0f, goParent.transform.rotation.y, 0f, goParent.transform.rotation.w);
-        }
     }
 
     void CreatePosDict() 
@@ -172,5 +131,45 @@ public class SpawnThoughts : MonoBehaviour
         dictN.Add("Devastation", "Neg");
         dictN.Add("Vulnerability", "Neg");
         dictN.Add("Dread", "Neg");
+    }
+
+    public void ThoughtSpawns()
+    {
+        float vStep = (2f * Mathf.PI) / AmountOfPoints;
+        for (int o = 0; o < AmountOfPoints; o++)
+        {
+            Vector3 p;
+            float r = circleRadius * Mathf.Cos(o * vStep);
+            //Y does nothing in our example
+            p.x = transform.position.x + (r * Mathf.Cos(0f));
+            //p.x = transform.position.x + (r * Mathf.Sin(0f));
+            //p.y = transform.position.y + (r * Mathf.Cos(0f));
+            p.z = transform.position.z + (circleRadius * Mathf.Sin(o * vStep));
+            p.y = transform.position.y;
+            var vPos = p;
+
+            var goParent = Instantiate(TextParent);
+            goParent.transform.position = vPos;
+            goList.Add(goParent);
+
+            var rndWord = dictN.ElementAt(Random.Range(0, dictN.Count));
+            HelveticaText = rndWord.Key;
+            var go = Instantiate(FloatingText);
+            var helvComp = go.GetComponent<SimpleHelvetica>();
+
+            helvComp.emotionId = rndWord.Value;
+            helvComp.Text = HelveticaText;
+            helvComp.GenerateText();
+            go.transform.position = player.position + player.forward;
+            wordList.Add(go);
+
+            go.GetComponent<testScript>().EmptyParent = goParent.transform;
+
+            //go.transform.localScale = new Vector3(1f, 1f, 1f);
+            //helvComp.AddBoxCollider();
+            //go.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+
+            dictN.Remove(rndWord.Key);
+        }
     }
 }

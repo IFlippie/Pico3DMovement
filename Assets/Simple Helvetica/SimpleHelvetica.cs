@@ -133,7 +133,7 @@ public class SimpleHelvetica : MonoBehaviour {
 		//disable child objects inside _Alphabets
 		transform.Find("_Alphabets").gameObject.SetActiveRecursively(false);
 #endif
-		
+
 	}
 	
 
@@ -219,20 +219,23 @@ public class SimpleHelvetica : MonoBehaviour {
 	
 	
 	public void AddBoxCollider(){
-		//Debug.Log ("AddBoxCollider");
-		
-		//foreach (Transform child in transform.Find ("_Alphabets")){
-		//	child.gameObject.AddComponent<BoxCollider>();
-		//}
-				
-		//foreach (Transform child in transform){
-		//	if (child.name!="_Alphabets"){
-		//		child.gameObject.AddComponent<BoxCollider>();
-		//	}
-		//}
-		
-		BoxColliderAdded = true;
-		
+        //Debug.Log ("AddBoxCollider");
+
+        //foreach (Transform child in transform.Find("_Alphabets"))
+        //{
+        //    child.gameObject.AddComponent<BoxCollider>();
+        //}
+
+        //foreach (Transform child in transform)
+        //{
+        //    if (child.name != "_Alphabets")
+        //    {
+        //        child.gameObject.AddComponent<BoxCollider>();
+        //    }
+        //}
+
+        BoxColliderAdded = true;
+
 		//set previously set values
 		//SetBoxColliderVariables();
 
@@ -255,6 +258,8 @@ public class SimpleHelvetica : MonoBehaviour {
 
 		//This works best for most sentences
 		rend = transform.GetComponent<MeshRenderer>().bounds;
+		//var currentScale = transform.localScale;
+		//transform.localScale = new Vector3(1f, 1f, 1f);
 		foreach (Transform child in transform)
 		{
 			if (child.name != "_Alphabets")
@@ -276,22 +281,26 @@ public class SimpleHelvetica : MonoBehaviour {
 			tempBackground.transform.localScale = rend.size;
 			tempBackground.transform.position = rend.center - transform.position;
 			tempBackground.transform.position = new Vector3(tempBackground.transform.position.x-0.6f, tempBackground.transform.position.y+1.35f, tempBackground.transform.position.z+3f);
-		}		
+		}
+		//transform.localScale = currentScale;
 	}
 
 	public void RemoveBoxCollider(){
-		//Debug.Log ("RemoveBoxCollider");
+        //Debug.Log ("RemoveBoxCollider");
 
-		//foreach (Transform child in transform.Find ("_Alphabets")){
-		//	DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
-		//}
+        //foreach (Transform child in transform.Find("_Alphabets"))
+        //{
+        //    DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
+        //}
 
-		//foreach (Transform child in transform){
-		//	if (child.name!="_Alphabets"){
-		//		DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
-		//	}
-		//}
-		if (gameObject.GetComponent<BoxCollider>() != null) 
+        //foreach (Transform child in transform)
+        //{
+        //    if (child.name != "_Alphabets")
+        //    {
+        //        DestroyImmediate(child.gameObject.GetComponent<BoxCollider>());
+        //    }
+        //}
+        if (gameObject.GetComponent<BoxCollider>() != null) 
 		{
 			DestroyImmediate(gameObject.GetComponent<BoxCollider>());
 		}	

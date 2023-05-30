@@ -8739,9 +8739,9 @@ GameObject:
   - component: {fileID: 6355066759681478049}
   - component: {fileID: 6355066759679546350}
   - component: {fileID: 6355066759679546336}
-  - component: {fileID: 6355066759679546340}
+  - component: {fileID: -3848757400504421029}
   m_Layer: 0
-  m_Name: 180Helvetica
+  m_Name: NinjaHelvetica
   m_TagString: Text
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8754,7 +8754,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355066759679546339}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
@@ -8785,7 +8785,7 @@ Transform:
   - {fileID: 730638301784092086}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6355066759673538521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9016,19 +9016,20 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!65 &6355066759679546340
-BoxCollider:
+--- !u!114 &-3848757400504421029
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6355066759679546339}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 160.50003, y: 38.530006, z: 5}
-  m_Center: {x: 80.25001, y: -3.2149968, z: 2.4999995}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f020868880b68ec4dbbf781793dd492e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EmptyParent: {fileID: 7117342844888816148, guid: 9504d7554b3ab894fa72666d2035eae3, type: 3}
+  player: {fileID: 0}
 --- !u!1 &6355066759679546345
 GameObject:
   m_ObjectHideFlags: 0
