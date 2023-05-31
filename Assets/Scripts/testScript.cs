@@ -19,17 +19,15 @@ public class testScript : MonoBehaviour
             //Only do this if you 180 on the y axis
             //transform.GetComponent<BoxCollider>().center = new Vector3(-transform.GetComponent<BoxCollider>().center.x, transform.GetComponent<BoxCollider>().center.y, -transform.GetComponent<BoxCollider>().center.z);
 
-            //var goParent = Instantiate(EmptyParent);
-            //goParent.transform.position = transform.GetComponent<SimpleHelvetica>().rend.center;
             transform.SetParent(EmptyParent.transform);
             EmptyParent.transform.LookAt(player);
             EmptyParent.transform.rotation = new Quaternion(0f, EmptyParent.transform.rotation.y, 0f, EmptyParent.transform.rotation.w);
-            transform.position = EmptyParent.transform.position + transform.TransformPoint(transform.GetComponent<BoxCollider>().center);
-            //print(transform.GetComponent<BoxCollider>().center);
-            print(transform.TransformPoint(transform.GetComponent<BoxCollider>().center));
+            
+            //print(transform.InverseTransformPoint(transform.position));
+            transform.localPosition = new Vector3((transform.GetComponent<BoxCollider>().center.x*0.01f), (transform.GetComponent<BoxCollider>().center.y * 0.01f), (transform.GetComponent<BoxCollider>().center.z * 0.01f));
+
             transform.Rotate(new Vector3(0f, 180f, 0f));
             doneOnce = true;
-            //add parent, get center of it, lookat player and fix rotation because of height difference
         }
     }
 }

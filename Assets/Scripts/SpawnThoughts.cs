@@ -19,8 +19,8 @@ public class SpawnThoughts : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreatePosDict();
-        CreateNegDict();
+        //CreatePosDict();
+        //CreateNegDict();
         ThoughtSpawns();
     }
 
@@ -135,6 +135,8 @@ public class SpawnThoughts : MonoBehaviour
 
     public void ThoughtSpawns()
     {
+        CreatePosDict();
+        CreateNegDict();
         float vStep = (2f * Mathf.PI) / AmountOfPoints;
         for (int o = 0; o < AmountOfPoints; o++)
         {
@@ -164,12 +166,26 @@ public class SpawnThoughts : MonoBehaviour
             wordList.Add(go);
 
             go.GetComponent<testScript>().EmptyParent = goParent.transform;
-
-            //go.transform.localScale = new Vector3(1f, 1f, 1f);
-            //helvComp.AddBoxCollider();
-            //go.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+            go.GetComponent<TextCollision>().CollisionID = rndWord.Value;
 
             dictN.Remove(rndWord.Key);
+        }
+    }
+
+    public void ClearSpawns()
+    {
+        if (goList.Count > 0 && wordList.Count > 0) 
+        {
+            foreach (var item in goList)
+            {
+                Destroy(item);
+            }
+            foreach (var item in wordList)
+            {
+                Destroy(item);
+            }
+            goList.Clear();
+            wordList.Clear();
         }
     }
 }
