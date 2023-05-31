@@ -16,6 +16,7 @@ public class SpawnThoughts : MonoBehaviour
     string HelveticaText;
     List<GameObject> goList = new List<GameObject>();
     List<GameObject> wordList = new List<GameObject>();
+    public GameObject SmokeParticle;
     // Start is called before the first frame update
     void Start()
     {
@@ -154,6 +155,8 @@ public class SpawnThoughts : MonoBehaviour
             var goParent = Instantiate(TextParent);
             goParent.transform.position = vPos;
             goList.Add(goParent);
+            var smokeGo = Instantiate(SmokeParticle);
+            smokeGo.transform.position = vPos;
 
             var rndWord = dictN.ElementAt(Random.Range(0, dictN.Count));
             HelveticaText = rndWord.Key;
