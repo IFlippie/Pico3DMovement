@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TextCollision : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TextCollision : MonoBehaviour
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("NinjaStick"))
+        if (collision.gameObject.CompareTag("NinjaStick") && collision.gameObject.GetComponent<XRGrabInteractable>().isSelected)
         {
                 if (CollisionID == "Pos")
                 {

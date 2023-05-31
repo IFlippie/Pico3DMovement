@@ -3462,7 +3462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2281200357ac7ea4fb8778185e6f7953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  circleRadius: 1.7
+  circleRadius: 1.9
   AmountOfPoints: 7
   FloatingText: {fileID: 6355066759679546339, guid: 9100e241bcb647e4aa417dd70d0c1e9a, type: 3}
   TextParent: {fileID: 1293437015}

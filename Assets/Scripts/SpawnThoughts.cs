@@ -81,6 +81,7 @@ public class SpawnThoughts : MonoBehaviour
 
     void CreateNegDict() 
     {
+        dictN.Clear();
         dictN.Add("Pain", "Neg");
         dictN.Add("Grief", "Neg");
         dictN.Add("Sadness", "Neg");
@@ -170,6 +171,14 @@ public class SpawnThoughts : MonoBehaviour
 
             dictN.Remove(rndWord.Key);
         }
+        var posGo = wordList[Random.Range(0, wordList.Count)];
+        var posWord = dictP.ElementAt(Random.Range(0, dictP.Count));
+        HelveticaText = posWord.Key;
+        var posHelv = posGo.GetComponent<SimpleHelvetica>();
+        posHelv.emotionId = posWord.Value;
+        posHelv.Text = HelveticaText;
+        posHelv.GenerateText();
+        posGo.GetComponent<TextCollision>().CollisionID = posWord.Value;
     }
 
     public void ClearSpawns()
