@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/FirstTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: 3e0cc085a75a7644a8c86793469c44b6
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Hands Interaction Demo/Runtime/HandsDemoScene.unity
     guid: 3ff35cecbcc52cc42945cf531638a60a
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Breakout.unity
     guid: c6c2a1ef432343a419605b55a92b8fa0
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/GoodThoughtsNinja.unity
     guid: 97705476ff9f27144bfca40633b99fdc
   - enabled: 1
