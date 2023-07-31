@@ -26,6 +26,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThoughtBoxing.unity
     guid: 6c0831732c0810a499d7b5e7f4629b25
+  - enabled: 1
+    path: Assets/Scenes/Thought2.unity
+    guid: 16356df83f36e7d49aa0a57f67e7600f
+  - enabled: 1
+    path: Assets/Scenes/GTNinja2.unity
+    guid: 1934f71e91886e0498592946eb75b09d
+  - enabled: 1
+    path: Assets/Scenes/Break2out.unity
+    guid: 39547cd8004a38246913158d84e09e6f
   m_configObjects:
     Unity.XR.PXR.Settings: {fileID: 11400000, guid: d242616f2ae9aff4abd527a6d2df34d6, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a5fd07d215f075249ad15558c10ec13f, type: 2}
