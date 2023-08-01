@@ -181,6 +181,13 @@
         "com.unity.xr.interaction.toolkit": "0.9.4-preview"
       }
     },
+    "com.whisper.unity": {
+      "version": "https://github.com/Macoron/whisper.unity.git?path=/Packages/com.whisper.unity",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c428e31b681ba4487d5d0e00f3b0308afa367434"
+    },
     "com.unity.modules.ai": {
       "version": "1.0.0",
       "depth": 0,

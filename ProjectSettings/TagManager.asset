@@ -11,6 +11,8 @@ TagManager:
   - Spawner
   - NinjaStick
   - EmptyParent
+  - WaveScore
+  - GameOverPanel
   layers:
   - Default
   - TransparentFX

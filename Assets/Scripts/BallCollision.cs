@@ -7,10 +7,14 @@ public class BallCollision : MonoBehaviour
     [HideInInspector]
     public float accelerationFactor = 0.01f;
     private float currentSpeed = 3f;
+    public WaveBasedWalls spawner;
+    public GameObject goPanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        spawner = GameObject.FindWithTag("Spawner").GetComponent<WaveBasedWalls>();
+        goPanel = GameObject.FindWithTag("GameOverPanel");
+        goPanel.SetActive(false);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -20,9 +24,9 @@ public class BallCollision : MonoBehaviour
             Rigidbody rb = GetComponent<Rigidbody>();
             //rb.velocity *= 1.01f;
             rb.velocity = rb.velocity.normalized * (currentSpeed + accelerationFactor);
-            print(rb.velocity.normalized);
+            //print(rb.velocity.normalized);
             print(currentSpeed + accelerationFactor);
-            accelerationFactor = accelerationFactor + 0.01f;
+            accelerationFactor = accelerationFactor + 0.04f;
             //Vector3 normal = collision.contacts[0].normal;
 
             //// Invert the normal vector to get the opposite direction
@@ -33,7 +37,7 @@ public class BallCollision : MonoBehaviour
 
             //// Apply the new velocity to the Rigidbody component
             //GetComponent<Rigidbody>().velocity = newVelocity;
-
+            spawner.remainingBricks -= 1;
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Paddle"))
@@ -53,10 +57,11 @@ public class BallCollision : MonoBehaviour
             //// Apply the new velocity to the Rigidbody component
             //GetComponent<Rigidbody>().velocity = newVelocity;
         }
-        if (collision.gameObject.CompareTag("Wall"))
+        if (collision.gameObject.CompareTag("Finish"))
         {
             //Rigidbody rb = GetComponent<Rigidbody>();
             //rb.velocity *= (1 + accelerationFactor);
+            Destroy(gameObject);
         }
     }
 }
