@@ -1245,6 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionID: Bedroefd
+  correctIncorrect: {fileID: 0}
 --- !u!1001 &35397209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13528,6 +13529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionID: Boos
+  correctIncorrect: {fileID: 0}
 --- !u!1 &501001369
 GameObject:
   m_ObjectHideFlags: 0
@@ -27653,6 +27655,10 @@ PrefabInstance:
       propertyPath: m_MaxRaycastDistance
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 9032954039820430273, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 97
+      objectReference: {fileID: 0}
     - target: {fileID: 9146015503685400394, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_RotateSpeed
       value: 0
@@ -27664,6 +27670,10 @@ PrefabInstance:
     - target: {fileID: 9146015503685400394, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_MaxRaycastDistance
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146015503685400394, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: m_RaycastMask.m_Bits
+      value: 65
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3327657640790614076, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
@@ -29864,6 +29874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionID: Blij
+  correctIncorrect: {fileID: 0}
 --- !u!1 &1192454682
 GameObject:
   m_ObjectHideFlags: 0
@@ -36110,6 +36121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionID: Bang
+  correctIncorrect: {fileID: 0}
 --- !u!1001 &1464961987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45923,6 +45935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionID: Beschaamd
+  correctIncorrect: {fileID: 0}
 --- !u!1 &1842436543
 GameObject:
   m_ObjectHideFlags: 0
