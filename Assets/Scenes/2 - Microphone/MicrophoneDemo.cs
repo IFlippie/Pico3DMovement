@@ -18,6 +18,13 @@ namespace Whisper.Samples
         public bool streamSegments = true;
         public bool printLanguage = true;
 
+        public GameObject textSpawn;
+        public GameObject textFinalPosition;
+        public Transform textSpawnPosition;
+        public GameObject TextParent;
+        public Transform player;
+        string HelveticaText;
+
         [Header("UI")] 
         public Button button;
         public Text buttonText;
@@ -86,6 +93,9 @@ namespace Whisper.Samples
                 text += $"\n\nLanguage: {res.Language}";
             
             outputText.text = text;
+            //put the text spawn here because we want the output
+            SpawnText(text);
+
             UiUtils.ScrollDown(scroll);
         }
         
@@ -116,5 +126,26 @@ namespace Whisper.Samples
             outputText.text = _buffer + "...";
             UiUtils.ScrollDown(scroll);
         }
+
+        public void SpawnText(string text)
+        {
+            var goParent = Instantiate(TextParent);
+            goParent.transform.position = textSpawnPosition.position;
+
+            //var smokeGo = Instantiate(SmokeParticle);
+            //smokeGo.transform.position = textSpawnPosition;
+
+            HelveticaText = text;
+            var go = Instantiate(textSpawn);
+            var helvComp = go.GetComponent<SimpleHelvetica>();
+
+            helvComp.Text = HelveticaText;
+            helvComp.GenerateText();
+            go.transform.position = player.position + player.forward;
+
+            go.GetComponent<testScript>().EmptyParent = goParent.transform;
+            go.GetComponent<TextCollision>().CollisionID = rndWord.Value;
+        }
+
     }
 }
