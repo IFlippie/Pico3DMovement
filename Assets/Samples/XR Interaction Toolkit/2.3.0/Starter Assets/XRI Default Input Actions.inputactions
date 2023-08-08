@@ -2070,7 +2070,7 @@
             "id": "1fb5e713-bd7a-41f0-b887-b63d1b916091",
             "actions": [
                 {
-                    "name": "New action",
+                    "name": "BackToMainButton",
                     "type": "Button",
                     "id": "dcc46f23-e543-48a5-9d66-d3cd57802c77",
                     "expectedControlType": "Button",
@@ -2083,11 +2083,22 @@
                 {
                     "name": "",
                     "id": "ed60810a-1284-42f5-bed4-1c8f9964af1a",
-                    "path": "",
+                    "path": "<PXR_Controller>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "New action",
+                    "action": "BackToMainButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fd497af6-5a07-45fd-ad4d-e3d9d3c05ec0",
+                    "path": "<XRSimulatedController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "BackToMainButton",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

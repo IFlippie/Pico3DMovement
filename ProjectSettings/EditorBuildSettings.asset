@@ -8,15 +8,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Tests/FirstTest.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
-    path: Assets/Scenes/OpeningScene.unity
-    guid: 3e0cc085a75a7644a8c86793469c44b6
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Hands Interaction Demo/Runtime/HandsDemoScene.unity
     guid: 3ff35cecbcc52cc42945cf531638a60a
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
+  - enabled: 1
+    path: Assets/Scenes/Thought2.unity
+    guid: 16356df83f36e7d49aa0a57f67e7600f
+  - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: 3e0cc085a75a7644a8c86793469c44b6
   - enabled: 1
     path: Assets/Scenes/Breakout.unity
     guid: c6c2a1ef432343a419605b55a92b8fa0
@@ -26,9 +29,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ThoughtBoxing.unity
     guid: 6c0831732c0810a499d7b5e7f4629b25
-  - enabled: 1
-    path: Assets/Scenes/Thought2.unity
-    guid: 16356df83f36e7d49aa0a57f67e7600f
   - enabled: 1
     path: Assets/Scenes/GTNinja2.unity
     guid: 1934f71e91886e0498592946eb75b09d
