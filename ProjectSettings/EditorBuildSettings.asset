@@ -15,11 +15,11 @@ EditorBuildSettings:
     path: Assets/Samples/XR Interaction Toolkit/2.3.0/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
   - enabled: 1
-    path: Assets/Scenes/Thought2.unity
-    guid: 16356df83f36e7d49aa0a57f67e7600f
-  - enabled: 1
     path: Assets/Scenes/OpeningScene.unity
     guid: 3e0cc085a75a7644a8c86793469c44b6
+  - enabled: 1
+    path: Assets/Scenes/Thought2.unity
+    guid: 16356df83f36e7d49aa0a57f67e7600f
   - enabled: 1
     path: Assets/Scenes/Breakout.unity
     guid: c6c2a1ef432343a419605b55a92b8fa0

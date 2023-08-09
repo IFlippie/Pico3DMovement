@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,6 +26,9 @@ namespace Whisper.Samples
         public GameObject TextParent;
         public Transform player;
         string HelveticaText;
+        float timer;
+        bool timeRunOut = false;
+        public List<GameObject> allTexts = new List<GameObject>();
 
         [Header("UI")] 
         public Button button;
@@ -50,6 +55,16 @@ namespace Whisper.Samples
 
             translateToggle.isOn = whisper.translateToEnglish;
             translateToggle.onValueChanged.AddListener(OnTranslateChanged);
+        }
+
+        public void Update()
+        {
+            timer -= Time.deltaTime;
+
+            if (timer > 0)
+            {
+                timeRunOut = true;
+            }
         }
 
         private void OnButtonPressed()
@@ -130,7 +145,7 @@ namespace Whisper.Samples
         public void SpawnText(string text)
         {
             var goParent = Instantiate(TextParent);
-            goParent.transform.position = textSpawnPosition.position;
+            goParent.transform.position = textSpawnPosition.position + (Vector3.up * 10);
 
             //var smokeGo = Instantiate(SmokeParticle);
             //smokeGo.transform.position = textSpawnPosition;
@@ -141,11 +156,31 @@ namespace Whisper.Samples
 
             helvComp.Text = HelveticaText;
             helvComp.GenerateText();
-            go.transform.position = player.position + player.forward;
+            go.transform.position = textSpawnPosition.position;
 
             go.GetComponent<testScript>().EmptyParent = goParent.transform;
-            go.GetComponent<TextCollision>().CollisionID = rndWord.Value;
+            allTexts.Add(goParent);
         }
 
+        public void ResultsButton() 
+        {
+            if (allTexts.Count >= 0) 
+            {
+                player.position = textFinalPosition.transform.position - new Vector3(0,1,0);
+                player.Rotate(new Vector3(0, 180, 0), Space.Self);
+                StartCoroutine(WaitAndPrint(2f));
+                allTexts.Clear();
+            }
+        }
+
+        private IEnumerator WaitAndPrint(float waitTime)
+        {
+            for (int i = 0; i < allTexts.Count; i++)
+            {            
+                allTexts[i].transform.position = allTexts[i].transform.position - (Vector3.up * 10);
+                yield return new WaitForSeconds(waitTime);
+                Destroy(allTexts[i]);
+            }
+        }
     }
 }
