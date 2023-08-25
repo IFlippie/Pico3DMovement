@@ -12,9 +12,12 @@ public class BallCollision : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawner = GameObject.FindWithTag("Spawner").GetComponent<WaveBasedWalls>();
-        goPanel = GameObject.FindWithTag("GameOverPanel");
-        goPanel.SetActive(false);
+        if (GameObject.FindWithTag("Spawner") != null) 
+        {
+            spawner = GameObject.FindWithTag("Spawner").GetComponent<WaveBasedWalls>();
+            goPanel = GameObject.FindWithTag("GameOverPanel");
+            goPanel.SetActive(false);
+        }        
     }
 
     void OnCollisionEnter(Collision collision)
@@ -37,7 +40,7 @@ public class BallCollision : MonoBehaviour
 
             //// Apply the new velocity to the Rigidbody component
             //GetComponent<Rigidbody>().velocity = newVelocity;
-            spawner.remainingBricks -= 1;
+            if (spawner != null) { spawner.remainingBricks -= 1; }            
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.CompareTag("Paddle"))
@@ -61,6 +64,10 @@ public class BallCollision : MonoBehaviour
         {
             //Rigidbody rb = GetComponent<Rigidbody>();
             //rb.velocity *= (1 + accelerationFactor);
+            if (goPanel != null) 
+            {
+                goPanel.SetActive(true);
+            }
             Destroy(gameObject);
         }
     }

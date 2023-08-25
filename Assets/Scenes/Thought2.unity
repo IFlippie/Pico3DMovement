@@ -5865,7 +5865,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 807.4, y: 45.8}
+  m_AnchoredPosition: {x: 807.4, y: 45}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285085184
@@ -5901,7 +5901,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: I am depressed
+  m_Text: I feel worthless
 --- !u!222 &285085185
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9842,6 +9842,7 @@ MonoBehaviour:
   TextParent: {fileID: 7117342844888816148, guid: 9504d7554b3ab894fa72666d2035eae3, type: 3}
   player: {fileID: 1521128264}
   allTexts: []
+  SmokeParticle: {fileID: 100000, guid: 83cd9cc9f9c88824ba18dc59b05ae328, type: 3}
   button: {fileID: 1403125435}
   buttonText: {fileID: 1495496594}
   outputText: {fileID: 912362080}
@@ -14043,7 +14044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 769817962}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.006, y: 1.735, z: 0.162}
+  m_LocalPosition: {x: -0.011, y: 1.7, z: 0.307}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 198766855}
@@ -30598,7 +30599,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}

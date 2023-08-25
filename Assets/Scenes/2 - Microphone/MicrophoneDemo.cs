@@ -29,6 +29,7 @@ namespace Whisper.Samples
         float timer;
         bool timeRunOut = false;
         public List<GameObject> allTexts = new List<GameObject>();
+        public GameObject SmokeParticle;
 
         [Header("UI")] 
         public Button button;
@@ -168,8 +169,7 @@ namespace Whisper.Samples
             {
                 player.position = textFinalPosition.transform.position - new Vector3(0,1,0);
                 player.Rotate(new Vector3(0, 180, 0), Space.Self);
-                StartCoroutine(WaitAndPrint(2f));
-                allTexts.Clear();
+                StartCoroutine(WaitAndPrint(2f));            
             }
         }
 
@@ -178,9 +178,12 @@ namespace Whisper.Samples
             for (int i = 0; i < allTexts.Count; i++)
             {            
                 allTexts[i].transform.position = allTexts[i].transform.position - (Vector3.up * 10);
+                var smokeGo = Instantiate(SmokeParticle);
+                smokeGo.transform.position = allTexts[i].transform.position;
                 yield return new WaitForSeconds(waitTime);
-                Destroy(allTexts[i]);
+                allTexts[i].transform.position = allTexts[i].transform.position + (Vector3.up * 10);
             }
+            allTexts.Clear();
         }
     }
 }
